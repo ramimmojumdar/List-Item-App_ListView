@@ -5,6 +5,7 @@
     android:layout_height = "match_parent" >
 
     <LinearLayout
+        android:id="@+id/itemId"
         android:layout_width = "match_parent"
         android:layout_height = "100dp"
         android:background="#8BC34A"

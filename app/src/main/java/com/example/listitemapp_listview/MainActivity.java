@@ -1,12 +1,15 @@
 package com.example.listitemapp_listview;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -32,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
     public class MyAdapter extends BaseAdapter{
 
         LayoutInflater layoutInflater;
+        LinearLayout itemId;
 
         @Override
         public int getCount() {
@@ -48,12 +52,23 @@ public class MainActivity extends AppCompatActivity {
             return 0;
         }
 
+        @SuppressLint("MissingInflatedId")
         @Override
         public View getView(int i, View view, ViewGroup viewGroup) {
 
             layoutInflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
             View myView = layoutInflater.inflate(R.layout.list_item, listView, false);
+            itemId = myView.findViewById(R.id.itemId);
+
+            itemId.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                    Toast toast = Toast.makeText(MainActivity.this, "Item number is: "+i, Toast.LENGTH_SHORT);
+                    toast.show();
+                }
+            });
 
 
             return myView;
