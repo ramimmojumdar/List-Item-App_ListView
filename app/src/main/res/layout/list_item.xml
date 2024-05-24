@@ -25,12 +25,14 @@
             android:layout_marginLeft="15dp"
             >
             <TextView
+                android:id="@+id/nameId"
                 android:layout_width = "wrap_content"
                 android:layout_height = "wrap_content"
                 android:text="Title Text"
                 android:textSize="25sp"
                 />
             <TextView
+                android:id="@+id/numberId"
                 android:layout_width = "wrap_content"
                 android:layout_height = "wrap_content"
                 android:text="01733333333333"
